@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Criar Conta</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<div class="login-container">
+    <div class="login-card">
+
+        <h2 style="margin-bottom: 20px;">Criar Conta</h2>
+
+        <!-- Usuário -->
+        <div class="input-group">
+            <span class="icon">👤</span>
+            <input id="username" type="text" placeholder="Usuário">
+        </div>
+
+        <!-- Email -->
+        <div class="input-group">
+            <span class="icon">📧</span>
+            <input id="email" type="email" placeholder="E-mail">
+        </div>
+
+        <!-- Senha -->
+        <div class="input-group">
+            <span class="icon">🔒</span>
+            <input id="password" type="password" placeholder="Senha">
+        </div>
+
+        <button class="btn-login" onclick="registerUser()">Registrar</button>
+
+        <p class="register-text">
+            Já tem conta?
+            <a href="login.html">Entrar</a>
+        </p>
+
+    </div>
+</div>
+
+<script src="./js/auth.js"></script>
+</body>
+</html>

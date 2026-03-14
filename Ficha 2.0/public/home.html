@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Home — Ficha 2.0</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body onload="carregarUsuario()">
+
+<!-- ================================
+     TOPO DIREITO — FOTO + MENU
+================================ -->
+<div class="profile-wrapper">
+
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <img id="userPhoto" class="profile-pic-small" src="./img/default.png">
+    
+    <div id="profileMenu" class="profile-menu">
+        <a href="#">📄 Ver Perfil</a>
+        <a href="#">⚙️ Editar Perfil</a>
+
+        <div class="profile-divider"></div>
+
+        <button onclick="logout()">🚪 Logout</button>
+    </div>
+
+</div>
+
+
+<!-- ================================
+        CONTEÚDO PRINCIPAL
+================================ -->
+<div class="home-container">
+
+    <div class="home-card">
+
+        <h1 class="home-title">Bem-vindo, <span id="username">carregando...</span>!</h1>
+        <p class="home-sub">Escolha uma categoria</p>
+
+        <div class="option-buttons">
+            <button class="option-btn">📘 Agentes</button>
+            <button class="option-btn">🗺️ Campanha</button>
+            <button class="option-btn">👾 Ameaças</button>
+            <button class="option-btn">🪪 Criar nova ficha</button>
+        </div>
+
+    </div>
+    
+
+</div>
+
+<button id="adminPanel" style="display:none;" onclick="window.location.href='admin.html'">
+    Painel Admin
+</button>
+
+
+
+<!-- ================================
+            SCRIPTS
+================================ -->
+<script>
+function toggleMenu() {
+    document.getElementById("profileMenu").classList.toggle("active");
+}
+
+async function carregarUsuario() {
+  try {
+    const response = await fetch("/auth/me", {
+      method: "GET",
+      credentials: "include"
+    });
+
+    if (!response.ok) {
+      window.location.href = "/login.html";
+      return;
+    }
+
+    const data = await response.json();
+    console.log("Usuário logado:", data);
+
+    document.getElementById("username").textContent = data.user.username || "Usuário";
+
+    // Foto de perfil, se existir
+    // document.getElementById("userPhoto").src = data.user.foto;
+
+  }
+  catch (err) {
+    console.error("Erro ao carregar usuário:", err);
+  }
+}
+</script>
+
+
+<script src="./js/auth.js"></script>
+
+
+</body>
+</html>
+
+

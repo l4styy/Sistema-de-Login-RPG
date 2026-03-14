@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Criar Ficha</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <div class="wizard-container">
+
+        <!-- ======================== -->
+        <!-- Barra de Progresso (Steps) -->
+        <!-- ======================== -->
+        <div class="steps-progress">
+            <div class="step-circle active" data-step="1">1</div>
+            <div class="step-line"></div>
+            <div class="step-circle" data-step="2">2</div>
+            <div class="step-line"></div>
+            <div class="step-circle" data-step="3">3</div>
+            <div class="step-line"></div>
+            <div class="step-circle" data-step="4">4</div>
+        </div>
+
+        <!-- Painel central -->
+        <div class="wizard-card">
+
+            <!-- ======================== -->
+            <!-- STEP 1 — CLASSE -->
+            <!-- ======================== -->
+            <section class="step-panel" id="step-1">
+                <h2>Escolha sua Classe</h2>
+                <div id="classes-list" class="grid-list"></div>
+
+                <button class="btn-nav next-step" data-next="2">Próximo →</button>
+            </section>
+
+            <!-- ======================== -->
+            <!-- STEP 2 — ORIGEM -->
+            <!-- ======================== -->
+            <section class="step-panel hidden" id="step-2">
+                <h2>Escolha sua Origem</h2>
+                <div id="origens-list" class="grid-list"></div>
+
+                <div class="nav-buttons">
+                    <button class="btn-nav prev-step" data-prev="1">← Voltar</button>
+                    <button class="btn-nav next-step" data-next="3">Próximo →</button>
+                </div>
+            </section>
+
+            <!-- ======================== -->
+            <!-- STEP 3 — ATRIBUTOS + PERÍCIAS -->
+            <!-- ======================== -->
+            <section class="step-panel hidden" id="step-3">
+                <h2>Atributos & Perícias</h2>
+
+                <h3>Atributos (0–3) — total deve somar 4</h3>
+                <div id="atributos-list"></div>
+
+                <h3>Escolha 6 Perícias</h3>
+                <div id="pericias-list" class="grid-list"></div>
+
+                <div class="nav-buttons">
+                    <button class="btn-nav prev-step" data-prev="2">← Voltar</button>
+                    <button class="btn-nav next-step" data-next="4">Próximo →</button>
+                </div>
+            </section>
+
+            <!-- ======================== -->
+            <!-- STEP 4 — DETALHES -->
+            <!-- ======================== -->
+            <section class="step-panel hidden" id="step-4">
+                <h2>Detalhes do Personagem</h2>
+
+                <div class="foto-container">
+                    <label>Foto PNG do Personagem</label>
+                    <input type="file" id="foto" accept="image/png">
+                    <img id="previewFoto" class="preview hidden">
+                </div>
+
+                <label>Nome</label>
+                <input type="text" id="nome">
+
+                <label>História</label>
+                <textarea id="historia"></textarea>
+
+                <label>Medos</label>
+                <textarea id="medos"></textarea>
+
+                <label>Aparência</label>
+                <textarea id="aparencia"></textarea>
+
+                <div class="nav-buttons">
+                    <button class="btn-nav prev-step" data-prev="3">← Voltar</button>
+                    <button id="btnSalvar" class="btn-save">Salvar Ficha</button>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="./js/ficha.js"></script>
+</body>
+</html>

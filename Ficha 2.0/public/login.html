@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="login-container">
+
+    <div class="login-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/11284/11284777.png" class="logo">
+
+      <div class="input-group">
+        <span class="icon">👤</span>
+        <input id="email" type="email" placeholder="Seu email">
+      </div>
+
+      <div class="input-group">
+        <span class="icon">🔒</span>
+        <input id="password" type="password" placeholder="Sua senha">
+      </div>
+
+      <button onclick="login()" class="btn-login">ENTRAR</button>
+
+      <p class="register-text">
+        Ainda não tem conta? <a href="register.html">Criar conta</a>
+      </p>
+    </div>
+
+  </div>
+
+<script src="./js/auth.js"></script>
+</body>
+</html>

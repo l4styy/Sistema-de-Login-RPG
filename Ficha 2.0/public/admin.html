@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>Painel Admin</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <!-- MENU SUPERIOR (mesmo estilo da home) -->
+    <div class="profile-wrapper">
+        <i class="menu-icon" id="menuBtn">☰</i>
+        <img src="./img/default.png" class="profile-pic-small" id="profilePic">
+        
+        <div class="profile-menu" id="profileMenu">
+            <a href="./home.html">Home</a>
+            <a id="logoutBtn">Sair</a>
+        </div>
+    </div>
+
+    <!-- CONTAINER CENTRAL -->
+    <div class="home-container">
+        <div class="home-card" style="width: 750px; max-height: 80vh; overflow-y: auto;">
+
+            <h2 class="home-title">Painel de Administração</h2>
+            <p class="home-sub">Gerencie usuários e fichas cadastradas</p>
+
+            <div id="adminContent">
+                <h3>Usuários cadastrados</h3>
+                <div id="userList" style="margin-top: 20px;"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="./js/admin.js"></script>
+</body>
+</html>
